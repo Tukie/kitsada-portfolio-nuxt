@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #6E41FE;
+    --bg: #F8F9FA;
+    --text-dark-light: #000;
+    --bg-section: #6E41FE;
+    --bg-nav: rgba(255, 255, 255, .6);
+    --bg-card: #ffffff;
+    --bg-icon: #E2D9FF;
+}
+
+body {
+    font-family: "Noto Sans Thai", sans-serif !important;
+    font-weight: 400;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-mode body {
+    background-color: rgb(37, 22, 83);
+    color: #ebf4f1;
+    --text-dark-light: #ffff;
+    --bg-section: #321E6B;
+    --bg-nav: rgba(37, 22, 83, .6);
+    --bg-card: #251653;
+}
+
+.text-dark-light {
+    color: var(--text-dark-light);
+}
+
+.bg-primary-c1 {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-section {
+    background-color: var(--bg-section);
+}
+
+.bg-card {
+    background-color: var(--bg-card);
+}
+
+.text-primary-c1 {
+    color: var(--primary-color)!important;
+}
+
+.bg-icon{
+    background-color: var(--bg-icon);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0 !important;
+    margin: 0 !important;
+}
