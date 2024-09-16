@@ -108,6 +108,9 @@ export default defineNuxtConfig({
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   },
+  image: {
+    dir: "public",
+  },
   plugins: ['~/plugins/toastService.ts'],
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
