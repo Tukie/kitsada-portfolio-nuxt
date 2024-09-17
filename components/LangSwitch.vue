@@ -12,7 +12,7 @@ const toggleLang = () => {
 
 <template>
     <div>
-        <Button class="bg-primary-c1 py-1 px-3 border-0 text-white rounded-5 border-0"
+        <Button class="bg-primary-c1 py-1 px-3 border-0 text-white rounded-5 border-0" title="Toggle Language"
             @click="toggleLang()">
             {{ selectedLang }}
         </Button>
