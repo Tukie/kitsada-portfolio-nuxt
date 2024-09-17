@@ -3,37 +3,52 @@ import { IconMenu2 } from "@tabler/icons-vue"
 const navItems = ref([
     {
         name: "About",
-        to: "#about",
+        to: "about",
     },
     {
         name: "Experience",
-        to: "#experience",
+        to: "experience",
     },
     {
         name: "Skills",
-        to: "#skills",
+        to: "skills",
     },
     {
         name: "Projects",
-        to: "#projects",
+        to: "projects",
     },
     {
         name: "Contact",
-        to: "#contact",
+        to: "contact",
     },
 ])
 
 const currentSection = ref(null)
 const openSidebar = ref(false)
 
+onMounted(() => {
+    window.addEventListener('scroll', () => {
+        for (const nav of navItems.value) {
+            if (window.scrollY >= document.getElementById(nav.to).offsetTop - (nav.to === "about" ? 200 : 300)) {
+                currentSection.value = nav.name
+            }
+
+            if (window.scrollY === 0) {
+                currentSection.value = null
+            }
+        }
+    })
+});
+
 </script>
 
 <template>
 
+
     <Drawer v-model:visible="openSidebar" header="KITSADA">
         <div class=" ">
             <div class="d-flex flex-column text-decoration-none list-unstyled p-0 m-0 gap-2">
-                <a :href="nav.to" class="text-dark text-decoration-none py-2 px-4 rounded-5 fw-semibold nav-items"
+                <a :href="`#${nav.to}`" class="text-dark text-decoration-none py-2 px-4 rounded-5 fw-semibold nav-items"
                     :class="{ 'active-nav': currentSection === nav.name }" @click="currentSection = nav.name"
                     v-for="nav in navItems" :key="nav.name">
                     {{ nav.name }}
@@ -48,12 +63,14 @@ const openSidebar = ref(false)
                 <Button @click="openSidebar = true" class="p-0 m-0 border-0 bg-transparent d-lg-none">
                     <IconMenu2 size="24" stroke="1.4" class="text-dark-light" />
                 </Button>
-                <p class="fs-5 fw-semibold text-primary-c1">KITSADA</p>
+                <a href="#" class="text-decoration-none fs-5 fw-semibold text-primary-c1">
+                    KITSADA
+                </a>
             </div>
 
 
             <div class="d-flex text-decoration-none list-unstyled p-0 m-0 gap-2 d-none d-lg-flex">
-                <a :href="nav.to" class="text-dark-light text-decoration-none py-2 px-4 rounded-5 nav-items"
+                <a :href="`#${nav.to}`" class="text-dark-light text-decoration-none py-2 px-4 rounded-5 nav-items"
                     :class="{ 'active-nav': currentSection === nav.name }" @click="currentSection = nav.name"
                     v-for="nav in navItems" :key="nav.name">
                     {{ nav.name }}
