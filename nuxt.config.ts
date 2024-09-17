@@ -23,6 +23,9 @@ const MyPreset = definePreset(Aura, {
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: "Kitsada Butnam - Portfolio",
       meta: [
         { charset: "utf-8" },
