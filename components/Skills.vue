@@ -105,16 +105,19 @@ const skillLists = ref([
                         <div class="row g-4">
                             <div class="col-md-4 h-100" v-for="skill in skillLists" :key="skill.name">
                                 <Button
-                                    class="w-100 d-flex align-items-center justify-content-start gap-3 text-start bg-transparent border-0">
+                                    class=" w-100 d-flex align-items-center justify-content-start gap-3 text-start border-0 bg-transparent">
                                     <div class="bg-icon p-2 rounded-3 text-primary-c1 d-flex  align-items-center position-relative flex-shrink-0"
                                         style="width: 60px; height: 60px">
                                         <NuxtImg :src="`/${skill.icon}`" alt="icon" class="img-fluid object-fit-contain"
                                             width="60" format="webp" placeholder />
                                     </div>
                                     <div class="">
-                                        <span class="fw-bold d-block mb-1 text-dark-light">{{ skill.name
-                                            }}</span>
-                                        <span class="text-dark-light d-block">{{ skill.level }}</span>
+                                        <span class="fw-bold d-block mb-1 text-dark-light">
+                                            {{ skill.name }}
+                                        </span>
+                                        <span class="text-dark-light d-block">
+                                            {{ skill.level }}
+                                        </span>
                                     </div>
                                 </Button>
                             </div>
