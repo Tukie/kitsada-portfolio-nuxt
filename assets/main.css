@@ -44,10 +44,10 @@ body {
 }
 
 .text-primary-c1 {
-    color: var(--primary-color)!important;
+    color: var(--primary-color) !important;
 }
 
-.bg-icon{
+.bg-icon {
     background-color: var(--bg-icon);
 }
 
@@ -60,4 +60,25 @@ h6,
 p {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+/* scroolbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
 }
