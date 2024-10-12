@@ -49,18 +49,18 @@ const calBetweenTwoDate = (date1, date2) => {
 
 const workExperiences = ref([
     {
-        dateRange: "July 10, 2566 - Present",
-        companyName: "Vanness Plus Consulting Co., Ltd.",
-        position: "Programmer",
-        responsibilities: "Build and implement fully functional websites using modern programming languages (PHP, Vue, Nuxt, MySQL), ensuring responsiveness, scalability, and performance. Design intuitive and visually appealing user interfaces, focusing on user experience (UX) and user-centered design principles to improve usability and functionality. Write comprehensive user guides and documentation, providing step-by-step instructions and troubleshooting tips for end users and team members. Ensure ongoing website functionality through regular maintenance, security updates, performance optimization, and resolving technical issues promptly.",
+        dateRange: "workExperience.experience1.dateRange",
+        companyName: "workExperience.experience1.companyName",
+        position: "workExperience.experience1.position",
+        responsibilities: "workExperience.experience1.responsibilities",
         length: calBetweenTwoDate(new Date(2023, 6, 10), new Date())
     },
     {
-        dateRange: "April 1, 2565 - June 17, 2565",
-        companyName: "BANK FOR AGRICULTURE AND AGRICULTURAL COOPERATIVES, BANGKOK, THAILAND (BAAC)",
-        position: "Internship student",
-        responsibilities: "Customer Service Opening new accounts for customers. Processing ATM card applications, including A-GEN cards and gold cards. Assisting customers with the A-Mobile application and Mobile Banking application of the bank. Support Functions for Financial Services: Printing and photocopying documents. Handling cash boxes for ATM replenishment. Support Functions for Credit Services: Printing invoice statements and folding them. Data entry for insurance applications, Taweesap 99, and Morakot Cooperative.",
-        length: calBetweenTwoDate(new Date(2023, 3, 1), new Date(2023, 5, 17))
+        dateRange: "workExperience.experience2.dateRange",
+        companyName: "workExperience.experience2.companyName",
+        position: "workExperience.experience2.position",
+        responsibilities: "workExperience.experience2.responsibilities",
+        length: calBetweenTwoDate(new Date(2022, 3, 1), new Date(2022, 5, 17))
     },
 ])
 
@@ -69,8 +69,12 @@ const workExperiences = ref([
 <template>
     <div>
         <div class="mb-5" data-aos="fade-in">
-            <h2 class="text-center text-dark-light fw-bold fs-2 mb-2">Work experience</h2>
-            <p class="text-center text-dark-light">Information about my work history.</p>
+            <h2 class="text-center text-dark-light fw-bold fs-2 mb-2">
+                {{ $t('workExperience.title') }}
+            </h2>
+            <p class="text-center text-dark-light">
+                {{ $t('workExperience.description') }}
+            </p>
         </div>
         <div class="d-none d-lg-block">
             <Timeline :value="workExperiences" align="alternate" class="w-100">
@@ -79,17 +83,17 @@ const workExperiences = ref([
                         data-aos-delay="200">
                         <div class="">
                             <span class="fw-bold d-block mb-3 bg-primary-c1 text-white p-2 rounded-5 text-center">
-                                {{ slotProps.item.dateRange }}
+                                {{ $t(slotProps.item.dateRange) }}
 
                                 <span>({{ slotProps.item.length }})</span>
                             </span>
-                            <span class="fw-bold d-block mb-1 fs-5"> {{ slotProps.item.companyName }}</span>
+                            <span class="fw-bold d-block mb-1 fs-5"> {{ $t(slotProps.item.companyName) }}</span>
                             <span class="text-dark-light d-block mb-2 fw-semibold">
-                                {{ slotProps.item.position }}
+                                {{ $t(slotProps.item.position) }}
                             </span>
                             <hr />
                             <span class="text-dark-light d-block" style="font-size: .9rem;">
-                                {{ slotProps.item.responsibilities }}
+                                {{ $t(slotProps.item.responsibilities) }}
                             </span>
                         </div>
                     </div>
@@ -101,16 +105,16 @@ const workExperiences = ref([
                 data-aos-delay="200" v-for="workExp in workExperiences" :key="workExp.companyName">
                 <div class="">
                     <span class="fw-bold d-block mb-3 bg-primary-c1 text-white p-2 rounded-5 text-center">
-                        {{ workExp.dateRange }}
+                        {{ $t(workExp.dateRange) }}
                         <span>({{ workExp.length }})</span>
                     </span>
-                    <span class="fw-bold d-block mb-1 fs-5"> {{ workExp.companyName }}</span>
+                    <span class="fw-bold d-block mb-1 fs-5"> {{ $t(workExp.companyName) }}</span>
                     <span class="text-dark-light d-block mb-1 fw-semibold">
-                        {{ workExp.position }}
+                        {{ $t(workExp.position) }}
                     </span>
                     <hr />
                     <span class="text-dark-light d-block" style="font-size: .9rem;">
-                        {{ workExp.responsibilities }}
+                        {{ $t(workExp.responsibilities) }}
                     </span>
                 </div>
             </div>

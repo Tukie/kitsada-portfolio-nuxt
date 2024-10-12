@@ -79,17 +79,16 @@ const submitForm = async () => {
 <template>
     <div>
         <div class="mb-5">
-            <h2 class="text-center text-light fw-bold fs-2 mb-2">Contact</h2>
-            <p class="text-center text-light">
-                Please provide the information through the form below to contact me <br>
-                and let me know that you are interested in communicating with me
+            <h2 class="text-center text-light fw-bold fs-2 mb-4">{{ $t('contact.title') }}</h2>
+            <p class="text-center text-light mx-auto" style="max-width: 550px;">
+                {{ $t('contact.description') }}
             </p>
         </div>
         <div class="">
             <Form :validation-schema="validationSchema" @submit="submitForm" class=" m-auto" style="max-width: 500px;"
                 v-slot="{ errors }">
                 <div class="mb-3">
-                    <label for="name" class="form-label text-light">Name</label>
+                    <label for="name" class="form-label text-light">{{ $t('contact.name') }}</label>
                     <Field id="name" name="name" type="text" class="form-control" :class="{ 'is-invalid': errors.name }"
                         v-model="formData.name" />
                     <ErrorMessage class="bg-danger text-white px-3 mt-2 d-inline-block rounded-5" name="name"
@@ -97,7 +96,7 @@ const submitForm = async () => {
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label text-light">Email</label>
+                    <label for="email" class="form-label text-light">{{ $t('contact.email') }}</label>
                     <Field id="email" name="email" type="text" class="form-control"
                         :class="{ 'is-invalid': errors.email }" v-model="formData.email" />
                     <ErrorMessage class="bg-danger text-white px-3 mt-2 d-inline-block rounded-5" name="email"
@@ -105,7 +104,7 @@ const submitForm = async () => {
                 </div>
 
                 <div class="mb-3">
-                    <label for="message" class="form-label text-light">Message</label>
+                    <label for="message" class="form-label text-light">{{ $t('contact.message') }}</label>
                     <Field id="message" name="message" class="form-control" as="textarea" rows="3"
                         :class="{ 'is-invalid': errors.message }" v-model="formData.message" />
                     <ErrorMessage class="bg-danger text-white px-3 mt-2 d-inline-block rounded-5" name="message"
@@ -114,7 +113,7 @@ const submitForm = async () => {
 
                 <Button type="submit" class="m-auto d-block px-5 rounded-5 mt-4 bg-white text-primary-c1 fw-bold"
                     :disabled="isLoading">
-                    Submit
+                    {{ $t('contact.submit') }}
                     <span class="spinner-border spinner-border-sm" aria-hidden="true" v-if="isLoading"></span>
                 </Button>
             </Form>

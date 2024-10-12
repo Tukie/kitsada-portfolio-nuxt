@@ -8,11 +8,13 @@ const visible = ref(false)
     <div class="">
         <Dialog v-model:visible="visible" modal header="Download Resume" :style="{ width: '25rem' }">
             <div class="d-flex gap-3">
-                <Button class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
+                <Button
+                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
                     <NuxtImg src="/us_flag.svg" alt="icon" class="img-fluid" width="32" height="32" />
                     EN
                 </Button>
-                <Button class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
+                <Button
+                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
                     <NuxtImg src="/thai_flag.svg" alt="icon" class="img-fluid" width="32" height="32" />
                     TH
                 </Button>
@@ -22,12 +24,12 @@ const visible = ref(false)
     <div class="pt-5 container d-flex flex-column flex-md-row gap-3 align-items-center justify-content-evenly"
         style="min-height:30rem">
         <div class="text-center text-md-start" data-aos="fade-in">
-            <span class="mb-2 d-block">Welcome to My portfolio Website I'm</span>
-            <h1 class="display-1 fw-bold">Kitsada <br> Butnam</h1>
+            <span class="mb-2 d-block">{{ $t('hero.title') }}</span>
+            <h1 class="display-1 fw-bold">{{ $t('hero.name') }} <br> {{ $t('hero.lastName') }}</h1>
             <Button @click="visible = true"
                 class="bg-primary-c1 text-white my-4 rounded-5 fw-semibold d-flex align-items-center gap-2 px-5 mx-auto mx-md-0">
                 <IconDownload size="32" />
-                <span class="fs-5">Resume</span>
+                <span class="fs-5">{{ $t('hero.resume') }}</span>
             </Button>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-center" data-aos="fade-in">

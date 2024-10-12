@@ -1,11 +1,14 @@
 <script lang="js" setup>
 const selectedLang = ref("EN");
+const { locale, setLocale } = useI18n()
 
 const toggleLang = () => {
     if (selectedLang.value === 'TH') {
         selectedLang.value = 'EN';
+        setLocale('th')
     } else {
         selectedLang.value = 'TH';
+        setLocale('en')
     }
 }
 </script>

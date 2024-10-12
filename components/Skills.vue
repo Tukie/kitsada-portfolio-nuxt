@@ -41,70 +41,101 @@ const skillLists = ref([
     {
         name: "Bootstrap",
         icon: "bootstrap.png",
-        level: "Advanced"
+        href: "https://getbootstrap.com/",
+        level: "advanced"
     },
     {
         name: "Tailwind",
         icon: "tailwind.webp",
-        level: "Intermediate"
+        href: "https://tailwindcss.com/",
+        level: "intermediate"
     },
     {
         name: "Vue.js",
         icon: "vue.svg",
-        level: "Intermediate"
+        href: "https://vuejs.org/",
+        level: "intermediate"
     },
     {
         name: "Nuxt.js",
         icon: "nuxt.svg",
-        level: "Beginner"
+        href: "https://nuxt.com/",
+        level: "beginner"
     },
     {
         name: "PHP",
         icon: "php.png",
-        level: "Advanced"
+        href: "https://www.php.net/",
+        level: "advanced"
     },
     {
         name: "Docker",
         icon: "docker.webp",
-        level: "Beginner"
+        href: "https://www.docker.com/",
+        level: "beginner"
     },
     {
         name: "Git",
         icon: "github.png",
-        level: "Intermediate"
+        href: "https://github.com/",
+        level: "intermediate"
     },
     {
         name: "MySQL",
         icon: "sql.png",
-        level: "Intermediate"
+        href: "https://www.mysql.com/",
+        level: "intermediate"
     },
     {
         name: "Leaf PHP",
         icon: "leaf.png",
-        level: "Beginner"
+        href: "https://leafphp.dev/",
+        level: "beginner"
+    },
+    {
+        name: "Express.js",
+        icon: "express.webp",
+        href: "https://expressjs.com/",
+        level: "beginner"
+    },
+    {
+        name: "Sequelize",
+        icon: "sequelize.svg",
+        href: "https://sequelize.org/",
+        level: "beginner"
     },
 ])
+
+const openLink = (url) => {
+    window.open(url, '_blank');
+}
 </script>
 
 
 <template>
     <div>
         <div class="mb-5" data-aos="fade-in">
-            <h2 class="text-center text-light fw-bold fs-2 mb-2">Skills</h2>
-            <p class="text-center text-light">Information about my skills.</p>
+            <h2 class="text-center text-light fw-bold fs-2 mb-2">
+                {{ $t('skills.title') }}
+            </h2>
+            <p class="text-center text-light">
+                {{ $t('skills.description') }}
+            </p>
         </div>
         <div class="bg-card p-5 rounded-4" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-4">
-                <div class="col-lg-4 h-100" data-aos="fade-right" data-aos-delay="400">
-                    <div class="h-100 d-flex justify-content-center align-items-center">
-                        <Chart type="doughnut" :data="chartData" :options="chartOptions" style="height:280px;" />
+                <div class="col-xl-4 h-100" data-aos="fade-right" data-aos-delay="400">
+                    <div class="h-100 py-5">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <Chart type="doughnut" :data="chartData" :options="chartOptions" />
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-8 h-100" data-aos="fade-left" data-aos-delay="400">
+                <div class="col-xl-8 h-100" data-aos="fade-left" data-aos-delay="400">
                     <div class="d-flex flex-column justify-content-center align-items-center h-100">
                         <div class="row g-4">
                             <div class="col-md-4 h-100" v-for="skill in skillLists" :key="skill.name">
-                                <Button
+                                <Button @click="openLink(skill.href)"
                                     class=" w-100 d-flex align-items-center justify-content-start gap-3 text-start border-0 bg-transparent">
                                     <div class="bg-icon p-2 rounded-3 text-primary-c1 d-flex  align-items-center position-relative flex-shrink-0"
                                         style="width: 60px; height: 60px">
@@ -116,7 +147,7 @@ const skillLists = ref([
                                             {{ skill.name }}
                                         </span>
                                         <span class="text-dark-light d-block">
-                                            {{ skill.level }}
+                                            {{ $t(`skills.level.${skill.level}`) }}
                                         </span>
                                     </div>
                                 </Button>

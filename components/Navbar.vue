@@ -2,23 +2,23 @@
 import { IconMenu2 } from "@tabler/icons-vue"
 const navItems = ref([
     {
-        name: "About",
+        name: "about",
         to: "about",
     },
     {
-        name: "Experience",
+        name: "experience",
         to: "experience",
     },
     {
-        name: "Skills",
+        name: "skills",
         to: "skills",
     },
     {
-        name: "Projects",
+        name: "projects",
         to: "projects",
     },
     {
-        name: "Contact",
+        name: "contact",
         to: "contact",
     },
 ])
@@ -64,7 +64,7 @@ onMounted(() => {
                     <IconMenu2 size="24" stroke="1.4" class="text-dark-light" />
                 </Button>
                 <a href="#" class="text-decoration-none fs-5 fw-semibold text-primary-c1">
-                    KITSADA
+                    {{ $t('navbar.name') }}
                 </a>
             </div>
 
@@ -73,7 +73,7 @@ onMounted(() => {
                 <a :href="`#${nav.to}`" class="text-dark-light text-decoration-none py-2 px-4 rounded-5 nav-items"
                     :class="{ 'active-nav': currentSection === nav.name }" @click="currentSection = nav.name"
                     v-for="nav in navItems" :key="nav.name">
-                    {{ nav.name }}
+                    {{ $t(`navbar.${nav.name}`) }}
                 </a>
             </div>
 
