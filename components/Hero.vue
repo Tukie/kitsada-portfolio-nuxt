@@ -8,16 +8,16 @@ const visible = ref(false)
     <div class="">
         <Dialog v-model:visible="visible" modal header="Download Resume" :style="{ width: '25rem' }">
             <div class="d-flex gap-3">
-                <Button
-                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
+                <a href="/resume/resume-kitsada-butnam-en.pdf" download
+                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold d-flex justify-content-center">
                     <NuxtImg src="/us_flag.svg" alt="icon" class="img-fluid" width="32" height="32" />
                     EN
-                </Button>
-                <Button
-                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold">
+                </a>
+                <a href="/resume/resume-kitsada-butnam-th.pdf" download 
+                    class="w-100 p-3 rounded-4 bg-primary-c1 text-white d-flex align-items-center gap-3 fw-semibold d-flex justify-content-center">
                     <NuxtImg src="/thai_flag.svg" alt="icon" class="img-fluid" width="32" height="32" />
                     TH
-                </Button>
+                </a>
             </div>
         </Dialog>
     </div>
