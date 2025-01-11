@@ -32,13 +32,13 @@ const personalDetails = ref([
 
 const educationDetails = ref([
     {
-        title: "highSchoolTitle",
-        text: "highSchoolText",
+        title: "universityTitle",
+        text: "universityText",
         icon: IconSchool
     },
     {
-        title: "universityTitle",
-        text: "universityText",
+        title: "highSchoolTitle",
+        text: "highSchoolText",
         icon: IconSchool
     },
 ])
