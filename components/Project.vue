@@ -11,6 +11,11 @@ const projects = ref([
         image: "project2.png",
         link: "http://time-ad-pj.rf.gd/Time-ad-PJ/landing.php",
     },
+    {
+        name: "project3.title",
+        image: "project3.png",
+        link: "https://movie-app-psi-beryl.vercel.app/browse",
+    },
 ])
 
 const openLink = (link) => {
@@ -25,7 +30,7 @@ const openLink = (link) => {
                 <p class="text-center text-dark-light">{{ $t('project.description') }}</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-6" v-for="project in projects" :key="project.name" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4" v-for="project in projects" :key="project.name" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-100 rounded-4 overflow-hidden shadow">
                         <div class="" style="height: 300px;">
                             <NuxtImg :src="project.image" alt="" class="img-fluid w-100 h-100 object-fit-cover"

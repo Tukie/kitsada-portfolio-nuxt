@@ -69,6 +69,9 @@ export default {
     project2: {
       title: "Time Attendance System",
     },
+    project3: {
+      title: "MovieHub",
+    },
   },
   contact: {
     title: "Contact Me",
